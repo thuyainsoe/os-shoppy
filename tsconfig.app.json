@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": "./", // Needed for path resolution
+    "paths": {
+      "@/*": ["src/*"], // This maps the `@` alias to the `src` folder
+      "@components/*": ["src/components/*"], // Maps `@components` to `src/components`
+      "@utils/*": ["src/utils/*"] // Maps `@utils` to `src/utils`
+    },
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
