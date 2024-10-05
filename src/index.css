@@ -4,9 +4,12 @@
 @tailwind utilities;
 
 @layer components {
-  .container-md {
-    @apply px-[2.7778%];
-    /* 2xl:max-w-[1360px] 2xl:m-auto */
+  .default-container {
+    @apply px-[9.0278%];
+  }
+
+  .align-center {
+    @apply flex items-center justify-center;
   }
 }
 
@@ -20,6 +23,6 @@ body {
   font-family: "Karla", sans-serif;
 }
 
-.button-active {
-  @apply bg-primary text-white border-none;
+.s-box-shadow {
+  box-shadow: 0px 1px 3px 0px #00000040;
 }

@@ -4,10 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#662C91",
-        gray: "#4A4A4A",
-        lightgray: "#E4E7ED",
+        skyblue: "#0094CD",
+        lightgray: "#EFF0F5",
         darkgray: "#828282",
+        headingcolor: "#414141",
+        violet: "#BC1A8D",
       },
     },
   },
