@@ -4,10 +4,14 @@ import shopLogo from "@/assets/images/home/shoplogo.png";
 import searchLogo from "@/assets/images/common/searchlogo.svg";
 import heartLogo from "@/assets/images/common/heartlogo.svg";
 import cartLogo from "@/assets/images/common/cartlogo.svg";
+import blueCartLogo from "@/assets/images/common/bluecartlogo.svg";
+import blueDeleteLogo from "@/assets/images/common/bluedeletelogo.svg";
 import navImg1 from "@/assets/images/home/navimg1.png";
+import cartImg1 from "@/assets/images/home/cartimg1.png";
 
 const Navbar: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [isClickWishlist, setIsClickWishList] = useState<boolean>(false);
 
   const handleSearchQuery = (searchValue: string) => {
     setSearchQuery(searchValue);
@@ -64,7 +68,7 @@ const Navbar: React.FC = () => {
               {[...Array(5)].map((_, index) => (
                 <div className="flex flex-row items-center gap-[20px]">
                   <img
-                    className="w-[65px] h-[65px] object-cover"
+                    className="w-[65px] h-[65px] object-cover rounded-[4px]"
                     src={navImg1}
                     alt=""
                   />
@@ -83,13 +87,86 @@ const Navbar: React.FC = () => {
         </div>
         <div className="flex items-center gap-[30px]">
           <div className="relative">
-            <img className="w-[30px] h-[30px]" src={heartLogo} alt="" />
+            <img
+              className="w-[30px] h-[30px] cursor-pointer"
+              src={heartLogo}
+              alt=""
+              onClick={() => setIsClickWishList((prev) => !prev)}
+            />
             <span
               className="w-[20px] h-[20px] text-white text-[14px] bg-violet
              align-center rounded-[50%] absolute top-[-8px] right-[-8px]"
             >
               2
             </span>
+            {/* wishlist container */}
+            {isClickWishlist && (
+              <div className="w-[540px] h-auto absolute top-[45px] left-[-270px] z-[100] s-box-shadow">
+                <div className="w-full bg-white p-[20px] flex justify-between items-center">
+                  <span className="text-headingcolor font-[600] text-[16px]">
+                    My Wishlist (3)
+                  </span>
+                  <a className="text-violet font-[600] text-[16px]" href="#">
+                    View All
+                  </a>
+                </div>
+                <div className="w-full bg-secondarycolor max-h-[400px] overflow-y-scroll scrollbar">
+                  {[...Array(5)].map((item) => (
+                    <div className="p-[20px] border border-bordercolor flex flex-col gap-[15px] items-end">
+                      <div className="w-full flex items-center justify-start gap-[20px]">
+                        <input className="w-[18px] h-[18px]" type="checkbox" />
+                        <div className="flex items-center justify-center p-[10px] border-[2px] border-skyblue rounded-[4px] w-[140px] h-[140px] bg-white">
+                          <img
+                            src={cartImg1}
+                            className="w-[95px] h-[95px] object-cover"
+                            alt=""
+                          />
+                        </div>
+                        <div className="flex flex-col gap-[7px]">
+                          <span className="text-headingcolor font-[600] text-[20px] line-clamp-1">
+                            Birkenstock Boston Slippers...
+                          </span>
+                          <span className="text-violet font-[600] text-[20px]">
+                            $78
+                          </span>
+                          <span className="text-contentcolor font-[400] text-[14px]">
+                            Available 60 items
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-[40px]">
+                        <div className="flex items-center gap-[5px]">
+                          <img
+                            className="w-[18px] h-[18px]"
+                            src={blueCartLogo}
+                          />
+                          <span className="text-skyblue font-[500] text-[14px]">
+                            Add To Cart
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-[5px]">
+                          <img
+                            className="w-[18px] h-[18px]"
+                            src={blueDeleteLogo}
+                          />
+                          <span className="text-skyblue font-[500] text-[14px]">
+                            Delete
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="p-[20px] flex items-center gap-[10px] bg-white">
+                  <input className="w-[20px] h-[20px]" type="checkbox" />
+                  <span className="text-contentcolor font-[500] text-[14px]">
+                    Select All (7)
+                  </span>
+                  <img className="w-[20px] h-[20px]" src={blueDeleteLogo} />
+                  <img className="w-[20px] h-[20px]" src={blueCartLogo} />
+                </div>
+              </div>
+            )}
           </div>
           <div className="relative">
             <img className="w-[30px] h-[30px]" src={cartLogo} alt="" />

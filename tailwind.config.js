@@ -12,7 +12,7 @@ export default {
         headingcolor: "#414141",
         contentcolor: "#828282",
         violet: "#BC1A8D",
-        bordercolor: "##DDDDDD",
+        bordercolor: "#DDDDDD",
       },
     },
   },
