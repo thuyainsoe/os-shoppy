@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import shopLogo from "@/assets/images/home/shoplogo.png";
 import searchLogo from "@/assets/images/common/searchlogo.svg";
 import heartLogo from "@/assets/images/common/heartlogo.svg";
 import cartLogo from "@/assets/images/common/cartlogo.svg";
+import navImg1 from "@/assets/images/home/navimg1.png";
 
 const Navbar: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const handleSearchQuery = (searchValue: string) => {
+    setSearchQuery(searchValue);
+  };
+
   return (
     <div>
       {/* top nav section */}
@@ -27,7 +34,7 @@ const Navbar: React.FC = () => {
         </ul>
       </div>
       {/* bottom nav section */}
-      <div className="w-full flex items-center justify-between h-[75px] default-container s-box-shadow">
+      <div className="w-full flex items-center justify-between h-[75px] default-container s-box-shadow relative">
         <img
           className="w-[147px] h-[45px]"
           src={shopLogo}
@@ -38,12 +45,41 @@ const Navbar: React.FC = () => {
             className="w-full bg-transparent focus:outline-none focus:border-none"
             type="text"
             placeholder="What are you looking for"
+            value={searchQuery}
+            onChange={(e) => {
+              handleSearchQuery(e.target.value);
+            }}
           />
           <img
             className="w-[20px] h-[20px] absolute top-1/2 translate-y-[-50%] right-[20px]"
             src={searchLogo}
             alt=""
           />
+
+          {searchQuery && (
+            <div
+              className="w-full scrollbar overflow-y-scroll absolute top-[48px] left-0 max-h-[400px] 
+          flex flex-col gap-[15px] bg-white z-[10000] p-[20px] s-box-shadow"
+            >
+              {[...Array(5)].map((_, index) => (
+                <div className="flex flex-row items-center gap-[20px]">
+                  <img
+                    className="w-[65px] h-[65px] object-cover"
+                    src={navImg1}
+                    alt=""
+                  />
+                  <div className="flex flex-col">
+                    <h3 className="font-[500] text-[16px] text-headingcolor">
+                      OMEGA Swiss Watch for sal
+                    </h3>
+                    <span className="font-[500] text-violet text-[16px]">
+                      $222
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         <div className="flex items-center gap-[30px]">
           <div className="relative">
