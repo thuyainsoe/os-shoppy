@@ -1,0 +1,13 @@
+.itemCardWithCarouselContainer {
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply text-skyblue w-[30px] h-[30px] rounded-[50%] bg-slightgray;
+    &::after {
+      @apply scale-[0.2] text-[60px] font-bold;
+    }
+  }
+
+  .sliderContainer {
+    @apply px-[7.3729%] w-full h-full bg-secondarycolor;
+  }
+}

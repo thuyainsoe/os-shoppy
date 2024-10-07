@@ -1,0 +1,26 @@
+.categoryLeftSectionContainer {
+  @apply w-[25.4237%] h-full  border-r border-bordercolor p-[10px] flex flex-col;
+
+  & > div {
+    @apply h-[50px] w-full;
+    transition: all 0.3s;
+    &:hover {
+      /* transform: translateX(10px); */
+      svg {
+        /* path {
+          @apply fill-skyblue stroke-skyblue;
+          transition: all 0.3s;
+        } */
+      }
+
+      span {
+        @apply text-skyblue;
+        transition: all 0.3s;
+      }
+    }
+  }
+
+  & > div:not(:last-child) {
+    @apply border-b border-bordercolor;
+  }
+}

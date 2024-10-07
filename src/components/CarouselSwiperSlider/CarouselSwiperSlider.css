@@ -1,0 +1,15 @@
+.fullCarouselSwiperContainer {
+  @apply w-full aspect-[1180_/_509] mt-[2px];
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply text-skyblue w-[40px] h-[40px] rounded-[50%] bg-slightgray;
+    &::after {
+      @apply scale-[0.3] text-[60px] font-bold;
+    }
+  }
+
+  .sliderContainer {
+    @apply px-[7.3729%] w-full h-full bg-secondarycolor;
+  }
+}
