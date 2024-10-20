@@ -61,7 +61,6 @@ const ProductDetail = () => {
               showPlayButton={false}
               showFullscreenButton={false}
               additionalClass="min-h-[530px] w-full"
-              originalHeight={420}
             />
           </div>
           <div className="w-[48.9795%] h-full  flex flex-col gap-[14px]">
