@@ -1,0 +1,36 @@
+.breadcrumbContainer {
+  @apply flex items-center gap-[10px] text-headingcolor;
+
+  li {
+    display: inline;
+  }
+
+  li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 5px;
+  }
+}
+
+.detailPageImageGalleryContainer {
+  @apply w-[51.0204%] h-full;
+
+  .image-gallery-image {
+    @apply min-h-[420px] w-full !object-cover;
+  }
+
+  .image-gallery-icon {
+    @apply !p-0;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .image-gallery-svg {
+    @apply !w-[35px] !h-[35px] bg-white rounded-[50%] mx-[15px] stroke-skyblue;
+  }
+
+  .image-gallery-thumbnail-image {
+    @apply aspect-[1_/_1] object-cover;
+  }
+}

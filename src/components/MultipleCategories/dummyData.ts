@@ -2,6 +2,11 @@ import laptopImage from "@/assets/images/home/categorylaptop.png";
 import phoneImage from "@/assets/images/home/categoryphone.png";
 import shirtImage from "@/assets/images/home/categoryshirt.png";
 
+export const starSvg = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.85413 17.5L6.20829 11.6458L1.66663 7.70829L7.66663 7.18746L9.99996 1.66663L12.3333 7.18746L18.3333 7.70829L13.7916 11.6458L15.1458 17.5L9.99996 14.3958L4.85413 17.5Z" fill="#FFAD05"/>
+</svg>
+`;
+
 export const categoriesData = [
   {
     id: 0,
