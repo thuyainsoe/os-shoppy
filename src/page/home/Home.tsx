@@ -18,19 +18,12 @@ const Home = () => {
             View More
           </button>
         </div>
-        <div className="mt-[20px] flex flex-wrap gap-[20px]">
-          <ItemCardWithCarousel />
-          <ItemCardWithCarousel />
-          <ItemCardWithCarousel />
-          <ItemCardWithCarousel />
-          <ItemCardWithCarousel />
-          <ItemCardWithCarousel />
-          <ItemCardWithCarousel />
-          <ItemCardWithCarousel />
-          <ItemCardWithCarousel />
+        <div className="my-[20px] grid grid-cols-4 gap-[20px]">
+          {[...Array(8)].map((_, index) => (
+            <ItemCardWithCarousel key={index} />
+          ))}
         </div>
       </div>
-      <div></div>
     </div>
   );
 };

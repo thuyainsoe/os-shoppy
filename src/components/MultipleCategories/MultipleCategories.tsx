@@ -2,7 +2,6 @@ import { useState } from "react";
 import SvgIcon from "../SvgIcon";
 import styles from "./MultipleCategories.module.css";
 import { categoriesData as data } from "./dummyData";
-import laptopImage from "@/assets/images/home/categorylaptop.png";
 
 const MultipleCategories = () => {
   const [categoriesData, setCategoriesData] = useState(data);
@@ -17,8 +16,9 @@ const MultipleCategories = () => {
       <h3 className="text-[24px] text-headingcolor font-[600]">Categories</h3>
       <div className="w-full h-[455px] bg-secondarycolor flex">
         <div className={styles.categoryLeftSectionContainer}>
-          {categoriesData.map((data: any) => (
+          {categoriesData.map((data: any, index: number) => (
             <div
+              key={index}
               className={`flex flex-row w-full justify-between items-center px-[10px] cursor-pointer`}
               onClick={() => {
                 handleCategoryItem(data.id);

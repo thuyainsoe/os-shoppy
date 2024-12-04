@@ -3,10 +3,16 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import img1 from "@/assets/images/home/recommandimg1.png";
 import blueHeartLogo from "@/assets/images/common/blueheartlogo.svg";
 import "./ItemCardWithCarouesl.css";
+import { useNavigate } from "react-router-dom";
 
 const ItemCardWithCarousel = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="w-[calc((100%-3*20px)/4)] p-[15px] bg-secondarycolor flex flex-col gap-[20px] rounded-[10px] cursor-pointer blue-box-shadow">
+    <div
+      className="p-[15px] bg-secondarycolor flex flex-col gap-[20px] rounded-[10px] cursor-pointer blue-box-shadow"
+      onClick={() => navigate("/detail")}
+    >
       <div className="w-full">
         <Swiper
           cssMode={true}
