@@ -1,17 +1,17 @@
 import { FC } from "react";
 
-export const StarIcon: FC<unknown> = () => {
+export const StarIcon: FC<any> = ({ color = "#FFAD05", width = 21 }) => {
   return (
     <svg
-      width="21"
-      height="19"
-      viewBox="0 0 21 19"
+      width={width}
+      height={width}
+      viewBox={`0 0 ${width} ${width}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M4.58237 18.625L6.13966 11.8927L0.916748 7.3646L7.81675 6.76565L10.5001 0.416687L13.1834 6.76565L20.0834 7.3646L14.8605 11.8927L16.4178 18.625L10.5001 15.0552L4.58237 18.625Z"
-        fill="#FFAD05"
+        fill={color}
       />
     </svg>
   );
